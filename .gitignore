@@ -1,0 +1,21 @@
+# Xcode
+DerivedData/
+*.xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Local secrets
+.env
+.env.*
+*.p8
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Legacy/local tooling
+node_modules/
+.DS_Store
+
+# Old local Expo state (not used by native app)
+.expo/
