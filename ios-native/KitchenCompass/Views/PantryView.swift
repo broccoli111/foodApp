@@ -41,7 +41,7 @@ struct PantryView: View {
                     TextField("Search pantry", text: $query)
                         .textFieldStyle(.roundedBorder)
                     ForEach(filteredItems) { item in
-                        PantryItemRow(item: item)
+                        PantryItemCard(item: item)
                     }
                 }
                 .padding()
@@ -52,7 +52,7 @@ struct PantryView: View {
     }
 }
 
-struct PantryItemRow: View {
+struct PantryItemCard: View {
     @EnvironmentObject private var store: KitchenStore
     let item: PantryItem
 
