@@ -10,7 +10,14 @@ struct SettingsView: View {
             Section("Supabase") {
                 Text("Backend URL: https://ohjezigyqrhkykbjimgo.supabase.co")
                     .font(.footnote)
-                Text("Add your publishable key in SupabaseConfig.plist before live auth.")
+                Text(store.syncStatus)
+                    .font(.footnote)
+                    .foregroundStyle(store.isUsingLiveBackend ? Color.basil : Color.secondary)
+                Button(store.isSyncing ? "Syncing..." : "Refresh from Supabase") {
+                    Task { await store.refreshFromSupabase() }
+                }
+                .disabled(store.isSyncing)
+                Text("Add your publishable key in SupabaseConfig.plist before live auth/sync.")
                     .font(.footnote)
                     .foregroundStyle(Color.secondary)
             }
@@ -21,9 +28,15 @@ struct SettingsView: View {
                 SecureField("Password", text: $password)
                 Button("Sign in") { Task { await store.signIn(email: email, password: password) } }
                 Button("Create account") { Task { await store.signUp(email: email, password: password) } }
+                Button("Sign out", role: .destructive) { store.signOut() }
                 if let message = store.authMessage {
                     Text(message).font(.footnote)
                 }
+            }
+            Section("Household") {
+                Text(store.household.name)
+                Text("\(store.pantryItems.count) pantry items")
+                Text("\(store.recipes.count) recipes")
             }
             Section("Stores") {
                 ForEach(store.stores) { store in

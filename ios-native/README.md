@@ -1,56 +1,47 @@
 # Kitchen Compass native iOS app
 
-This folder contains a native SwiftUI version of Kitchen Compass that you can open in Xcode and run on an iPhone with your Apple developer account.
+This is the primary Kitchen Compass app. It is a pure SwiftUI iOS project with direct Supabase backend calls.
 
-## Open in Xcode
+## Run locally
 
-1. Open `ios-native/KitchenCompass.xcodeproj` in Xcode.
+1. Open `KitchenCompass.xcodeproj` in Xcode.
 2. Select the `KitchenCompass` target.
-3. Set **Signing & Capabilities** to your Apple team.
-4. Change the bundle identifier if needed, e.g. `com.yourname.kitchencompass`.
-5. Connect your iPhone and select it as the run destination.
-6. Press **Run**.
+3. Pick your Apple Developer team under **Signing & Capabilities**.
+4. Change the bundle identifier if needed.
+5. Add your Supabase publishable key to `KitchenCompass/Resources/SupabaseConfig.plist`.
+6. Connect your iPhone and press **Cmd+R**.
 
-## Supabase configuration
+## Backend calls
 
-The app reads Supabase settings from:
+`Services/SupabaseClient.swift` uses only native Foundation networking:
 
-```text
-KitchenCompass/Resources/SupabaseConfig.plist
-```
+- Supabase Auth REST endpoints for sign up/sign in
+- PostgREST endpoints for household data
+- Public publishable key from `SupabaseConfig.plist`
+- User access token for authenticated household-scoped requests
 
-The project URL is already set:
+No Expo, React Native, JavaScript runtime, or third-party Swift package is required.
 
-```text
-https://ohjezigyqrhkykbjimgo.supabase.co
-```
+## Supabase data flow
 
-Add your publishable key in Xcode before testing live email auth:
+After sign-in/sign-up, `KitchenStore.refreshFromSupabase()` loads:
 
-```xml
-<key>SUPABASE_PUBLISHABLE_KEY</key>
-<string>YOUR_PUBLISHABLE_KEY</string>
-```
+- profile
+- default household
+- pantry items
+- recipes and ingredients
+- meal plans
+- shopping list items
+- stores
+- sale items
 
-Use the public publishable key from Supabase Dashboard -> FoodApp -> Project Settings -> API.
+Writes currently covered from the native UI:
 
-## What is native now
+- add pantry item
+- consume/update pantry item quantity
+- delete pantry item
+- add recipe with ingredients
+- add meal plan item
+- toggle persisted shopping list items
 
-- SwiftUI tab app: Home, Pantry, Recipes, Plan, Shopping, Scan
-- iOS-native card UI, forms, navigation, and tab bar
-- Pantry inventory and quick add/edit-style actions
-- Recipe library/detail/manual add
-- Weekly recommendation scoring
-- Meal planner
-- Shopping list generation and sale-aware store guidance
-- Mock receipt and recipe scanning flows
-- Native PhotosPicker hook for image selection
-- Supabase email auth REST client and config layer
-
-## Continued production work
-
-- Replace local `KitchenStore` arrays with Supabase PostgREST repositories.
-- Store auth sessions securely in Keychain.
-- Replace mocked OCR with VisionKit/Live Text or a backend OCR function.
-- Add camera capture with `UIImagePickerController` or AVFoundation.
-- Add XCTest coverage for normalization, recommendation scoring, and shopping list generation.
+Local generated recommendations and shopping lists remain deterministic Swift logic so they work offline and are explainable.

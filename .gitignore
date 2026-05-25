@@ -1,11 +1,21 @@
-node_modules/
-.expo/
-dist/
-build/
-.DS_Store
+# Xcode
+DerivedData/
+*.xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Local secrets
 .env
 .env.*
-!.env.example
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.p8
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Legacy/local tooling
+node_modules/
+.DS_Store
+
+# Old local Expo state (not used by native app)
+.expo/

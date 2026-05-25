@@ -1,39 +1,34 @@
-# Kitchen Compass roadmap
+# Kitchen Compass native iOS roadmap
 
-## Production data integration
+## Supabase integration
 
-- Replace local Zustand mock persistence with Supabase query/mutation hooks per household table.
-- Add household creation during onboarding and future invite/member management.
-- Generate Supabase types from the live project and remove the handwritten generated-style fallback.
-- Add storage buckets and policies for recipe images and scan uploads.
+- Move session storage from `UserDefaults` to Keychain.
+- Add refresh-token rotation handling in the Swift Supabase client.
+- Persist generated shopping lists back to `shopping_list_items` after meal-plan generation.
+- Add full edit/delete flows for recipes, meal plans, stores, sale items, and shopping list rows.
+- Add storage upload helpers for `recipe-images` and `scan-uploads` buckets.
 
-## Scanning intelligence
+## Scanning
 
-- Swap `MockOcrProvider` for an OCR provider such as Apple Vision, Google Vision, or a secure backend OCR pipeline.
-- Add an LLM parser implementation behind `RecipeParser` and `ReceiptParser` interfaces.
-- Store scan jobs and review decisions in `scan_jobs` for auditability and retries.
+- Replace mocked scan parsing with VisionKit / Vision OCR for receipt and recipe images.
+- Store scan jobs in `scan_jobs` and sync review decisions.
+- Add camera capture flow in addition to PhotosPicker.
 
-## Meal planning UX
+## Native iOS polish
 
-- Replace tap-to-add planner with gesture-based drag/drop using Reanimated and Gesture Handler.
-- Add breakfast/lunch/dinner/snack filters and leftovers.
-- Support recurring favorites and family preference constraints.
+- Add haptics to high-value actions.
+- Add loading skeletons and empty states for live Supabase data.
+- Add widgets or Live Activities for current shopping list if useful.
+- Add AppIcon and launch-screen assets.
 
-## Recommendation engine
+## Testing
 
-- Add unit-aware pantry sufficiency checks for equivalent units.
-- Add household preferences, disliked ingredients, dietary tags, and time-budget constraints.
-- Persist recommendation snapshots so explanations are stable across a planning session.
+- Add XCTest unit tests for normalization, recommendation scoring, sale matching, and shopping list generation.
+- Add integration tests for Supabase DTO encoding/decoding.
+- Add UI tests for onboarding, pantry add, recipe add, and shopping list flows.
 
-## Shopping and sales
+## Production backend
 
-- Build modular sale ingestion jobs for Flipp/import/manual retailer circular data.
-- Add savings thresholds to avoid extra trips for tiny discounts.
-- Add purchased-item reconciliation back into pantry with expiration suggestions.
-
-## Quality and release
-
-- Add unit tests for normalization, recommendation scoring, shopping generation, and sale matching.
-- Add E2E coverage for scan review, meal planning, and shopping generation.
-- Add error boundaries, skeleton loading states, and offline sync conflict handling.
-- Configure EAS build profiles and app icons/splash assets.
+- Add household invitations and multi-member role management.
+- Add sale ingestion pipeline for manual import / Flipp / retailer circular sources.
+- Add database functions for server-side shopping list persistence if client logic grows too complex.

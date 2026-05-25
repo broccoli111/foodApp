@@ -14,6 +14,7 @@
 		00000000000000000000001D /* RecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000001C /* RecommendationEngine.swift */; };
 		00000000000000000000001F /* ShoppingListGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000001E /* ShoppingListGenerator.swift */; };
 		000000000000000000000021 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000020 /* SupabaseClient.swift */; };
+		AA0000000000000000000002 /* SupabaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000001 /* SupabaseModels.swift */; };
 		000000000000000000000023 /* ScanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000022 /* ScanService.swift */; };
 		000000000000000000000025 /* KitchenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000024 /* KitchenStore.swift */; };
 		000000000000000000000027 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000026 /* MockData.swift */; };
@@ -35,6 +36,7 @@
 		00000000000000000000001C /* RecommendationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/RecommendationEngine.swift; sourceTree = "<group>"; };
 		00000000000000000000001E /* ShoppingListGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/ShoppingListGenerator.swift; sourceTree = "<group>"; };
 		000000000000000000000020 /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/SupabaseClient.swift; sourceTree = "<group>"; };
+		AA0000000000000000000001 /* SupabaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/SupabaseModels.swift; sourceTree = "<group>"; };
 		000000000000000000000022 /* ScanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/ScanService.swift; sourceTree = "<group>"; };
 		000000000000000000000024 /* KitchenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State/KitchenStore.swift; sourceTree = "<group>"; };
 		000000000000000000000026 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State/MockData.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				00000000000000000000001D /* RecommendationEngine.swift in Sources */,
 				00000000000000000000001F /* ShoppingListGenerator.swift in Sources */,
 				000000000000000000000021 /* SupabaseClient.swift in Sources */,
+				AA0000000000000000000002 /* SupabaseModels.swift in Sources */,
 				000000000000000000000023 /* ScanService.swift in Sources */,
 				000000000000000000000025 /* KitchenStore.swift in Sources */,
 				000000000000000000000027 /* MockData.swift in Sources */,
@@ -81,6 +84,7 @@
 				00000000000000000000001C /* RecommendationEngine.swift */,
 				00000000000000000000001E /* ShoppingListGenerator.swift */,
 				000000000000000000000020 /* SupabaseClient.swift */,
+				AA0000000000000000000001 /* SupabaseModels.swift */,
 				000000000000000000000022 /* ScanService.swift */,
 				000000000000000000000024 /* KitchenStore.swift */,
 				000000000000000000000026 /* MockData.swift */,
