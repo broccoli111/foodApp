@@ -67,3 +67,18 @@ Example:
 ```
 
 The path convention lets storage RLS verify household membership.
+
+
+## Applied hosted project
+
+The migrations have been applied to the Supabase project `FoodApp` (`ohjezigyqrhkykbjimgo`).
+
+Project API URL:
+
+```text
+https://ohjezigyqrhkykbjimgo.supabase.co
+```
+
+Use Supabase Dashboard or MCP `get_publishable_keys` to retrieve the publishable anon key for app `.env` configuration. Do not commit project keys into the repository.
+
+Security advisors are clean after the hardening migration. Performance advisor may report unused indexes while the database is empty; those indexes are intentional for household-scoped query patterns and foreign-key coverage.
