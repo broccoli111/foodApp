@@ -95,10 +95,16 @@ final class RecipeImportService {
         // Instagram metadata commonly looks like: "123 likes, 4 comments - user on May 1: \"caption\"".
         if let colon = description.range(of: ": ") {
             var caption = String(description[colon.upperBound...])
-            caption = caption.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines.union(CharacterSet(charactersIn: "\"")))
+            caption = trimCaption(caption)
             return caption
         }
-        return description
+        return trimCaption(description)
+    }
+
+    private func trimCaption(_ text: String) -> String {
+        var trimSet = CharacterSet.whitespacesAndNewlines
+        trimSet.insert(charactersIn: "\"")
+        return text.trimmingCharacters(in: trimSet)
     }
 
     private func parseStructuredRecipe(html: String, url: URL) -> ImportedRecipeDraft? {
