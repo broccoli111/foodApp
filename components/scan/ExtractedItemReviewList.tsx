@@ -10,7 +10,7 @@ export function ExtractedItemReviewList({ items, onToggle }: { items: ParsedRece
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <AppText weight="bold">{item.name}</AppText>
-              <AppText className="mt-1 text-sm" tone="muted">From "{item.raw_text}" • {Math.round(item.confidence * 100)}% confidence</AppText>
+              <AppText className="mt-1 text-sm" tone="muted">From {item.raw_text} - {Math.round(item.confidence * 100)}% confidence</AppText>
             </View>
             <View className={`h-6 w-6 rounded-full border-2 ${item.approved ? "border-basil bg-basil" : "border-muted"}`} />
           </View>

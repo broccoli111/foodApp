@@ -2,11 +2,15 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { demoHousehold, mockMealPlans, mockPantryItems, mockRecipes, mockSaleItems, mockShoppingListItems, mockStores } from "@/lib/constants/mockData";
-import type { MealPlan, PantryItem, RecipeWithIngredients, SaleItem, ShoppingListItem, Store } from "@/lib/types/models";
+import type { MealPlan, PantryItem, RecipeIngredient, RecipeWithIngredients, SaleItem, ShoppingListItem, Store } from "@/lib/types/models";
 import { normalizeIngredientName, inferCategory } from "@/services/normalizationService";
 
 const now = () => new Date().toISOString();
 const id = (prefix: string) => `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+
+type UnsavedRecipeInput = Omit<RecipeWithIngredients, "id" | "household_id" | "created_at" | "updated_at" | "ingredients"> & {
+  ingredients: Array<Omit<RecipeIngredient, "id" | "recipe_id">>;
+};
 
 interface KitchenState {
   householdId: string;
@@ -20,7 +24,7 @@ interface KitchenState {
   updatePantryItem: (id: string, patch: Partial<PantryItem>) => void;
   consumePantryItem: (id: string) => void;
   deletePantryItem: (id: string) => void;
-  addRecipe: (recipe: Omit<RecipeWithIngredients, "id" | "household_id" | "created_at" | "updated_at">) => RecipeWithIngredients;
+  addRecipe: (recipe: UnsavedRecipeInput) => RecipeWithIngredients;
   deleteRecipe: (id: string) => void;
   addMealPlan: (plan: Omit<MealPlan, "id" | "household_id" | "created_at">) => void;
   removeMealPlan: (id: string) => void;

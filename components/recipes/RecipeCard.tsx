@@ -21,7 +21,7 @@ export function RecipeCard({ recipe, pantryItems, onPress }: { recipe: RecipeWit
           {recipe.favorite ? <Badge label="favorite" /> : null}
           {recipe.tags.slice(0, 3).map((tag) => <Badge key={tag} label={tag} tone="oat" />)}
         </View>
-        <AppText className="mt-3 text-sm" tone="muted">{recipe.prep_time_minutes + recipe.cook_time_minutes} min total • {match.missing.length} missing</AppText>
+        <AppText className="mt-3 text-sm" tone="muted">{recipe.prep_time_minutes + recipe.cook_time_minutes} min total - {match.missing.length} missing</AppText>
       </Card>
     </Pressable>
   );

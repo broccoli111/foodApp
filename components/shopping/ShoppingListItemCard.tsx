@@ -12,7 +12,7 @@ export function ShoppingListItemCard({ item, stores, sales, onToggle }: { item: 
         <View className="flex-row items-center justify-between gap-3">
           <View className="flex-1">
             <AppText className={`text-lg ${item.checked ? "line-through" : ""}`} weight="bold">{item.name}</AppText>
-            <AppText tone="muted">{item.quantity_needed} {item.unit} • {item.category}</AppText>
+            <AppText tone="muted">{item.quantity_needed} {item.unit} - {item.category}</AppText>
             {store ? <AppText className="mt-2 text-sm" tone="basil">Recommended: {store.name}{sale ? ` (${sale.sale_description})` : ""}</AppText> : null}
           </View>
           <View className={`h-7 w-7 rounded-full border-2 ${item.checked ? "border-basil bg-basil" : "border-sage"}`} />

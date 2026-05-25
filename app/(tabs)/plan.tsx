@@ -40,7 +40,7 @@ export default function PlanScreen() {
                 <View key={plan.id} className="mt-3 flex-row items-center justify-between rounded-2xl bg-cream p-3">
                   <View className="flex-1">
                     <AppText weight="semibold">{recipe?.title ?? "Recipe"}</AppText>
-                    <AppText className="capitalize" tone="muted">{plan.meal_type} • {plan.servings} servings</AppText>
+                    <AppText className="capitalize" tone="muted">{plan.meal_type} - {plan.servings} servings</AppText>
                   </View>
                   <Button variant="ghost" onPress={() => removeMealPlan(plan.id)}>Remove</Button>
                 </View>

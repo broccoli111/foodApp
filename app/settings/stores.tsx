@@ -17,7 +17,7 @@ export default function StoresScreen() {
       {stores.map((store) => (
         <Card key={store.id} className="mb-3">
           <AppText className="text-lg" weight="bold">{store.name}</AppText>
-          <AppText className="mt-1" tone="muted">{store.chain} • {store.zip_code ?? "no zip"}</AppText>
+          <AppText className="mt-1" tone="muted">{store.chain} - {store.zip_code ?? "no zip"}</AppText>
           {store.preferred ? <Badge label="preferred" /> : null}
         </Card>
       ))}

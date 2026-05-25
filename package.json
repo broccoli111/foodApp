@@ -23,6 +23,7 @@
     "expo-haptics": "^56.0.3",
     "expo-image-picker": "^56.0.13",
     "expo-router": "^56.2.6",
+    "expo-status-bar": "^56.0.4",
     "nativewind": "^4.2.4",
     "react": "^19.2.6",
     "react-native": "^0.85.3",
@@ -35,6 +36,8 @@
   },
   "devDependencies": {
     "@types/react": "^19.2.15",
+    "eslint": "^9.0.0",
+    "eslint-config-expo": "~56.0.4",
     "typescript": "^6.0.3"
   },
   "private": true

@@ -21,8 +21,7 @@
     "plugins": [
       "expo-router",
       "expo-camera",
-      "expo-image-picker",
-      "react-native-reanimated"
+      "expo-image-picker"
     ],
     "experiments": {
       "typedRoutes": false

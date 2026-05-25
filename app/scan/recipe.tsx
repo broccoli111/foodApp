@@ -56,7 +56,7 @@ export default function ScanRecipeScreen() {
           <SectionHeader title="Review before saving" />
           <Card>
             <AppText className="text-xl" weight="bold">{draft.title}</AppText>
-            <AppText className="mt-2" tone="muted">Serves {draft.servings} • {draft.prep_time_minutes + draft.cook_time_minutes} min</AppText>
+            <AppText className="mt-2" tone="muted">Serves {draft.servings} - {draft.prep_time_minutes + draft.cook_time_minutes} min</AppText>
             <AppText className="mt-4" weight="bold">Ingredients</AppText>
             {draft.ingredients.map((ingredient) => <AppText key={ingredient.raw_text} className="mt-1" tone="muted">{ingredient.raw_text}</AppText>)}
           </Card>
