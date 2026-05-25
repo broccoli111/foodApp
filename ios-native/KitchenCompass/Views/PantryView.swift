@@ -48,6 +48,11 @@ struct PantryView: View {
             }
             .kitchenScreen()
             .navigationTitle("Pantry")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    ReceiptScanIconButton()
+                }
+            }
         }
     }
 }

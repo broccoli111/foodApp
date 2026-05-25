@@ -145,10 +145,13 @@ final class KitchenStore: ObservableObject {
     }
 
     func approveReceiptItems(_ items: [ParsedReceiptItem]) {
-        items.filter(\.approved).forEach { item in
-            let location: PantryLocation = ["dairy", "eggs", "produce"].contains(item.category) ? .fridge : .pantry
-            addPantryItem(name: item.name, quantity: item.quantity, unit: item.unit, location: location)
-        }
+        items
+            .filter(\.approved)
+            .filter { !$0.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && $0.quantity > 0 }
+            .forEach { item in
+                let location: PantryLocation = ["dairy", "eggs", "produce"].contains(item.category) ? .fridge : .pantry
+                addPantryItem(name: item.name.trimmingCharacters(in: .whitespacesAndNewlines), quantity: item.quantity, unit: item.unit, location: location)
+            }
     }
 
     func signIn(email: String, password: String) async {

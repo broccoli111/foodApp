@@ -51,3 +51,7 @@ Writes currently covered from the native UI:
 - toggle persisted shopping list items
 
 Local generated recommendations and shopping lists remain deterministic Swift logic so they work offline and are explainable.
+
+## Receipt confirmation sheet
+
+The Pantry toolbar includes a receipt scan icon. After receipt processing, Kitchen Compass presents a bottom sheet with one row per extracted item. Users can select/deselect each item and edit the item name and count before adding selected rows to pantry.

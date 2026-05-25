@@ -84,3 +84,7 @@ The Supabase backend migrations have been applied to `FoodApp`:
 - `harden_supabase_policies`
 
 Security advisors are clean. Remaining performance advisor notices may mention unused indexes while the database is empty; those indexes are intentional for household-scoped queries and FK coverage.
+
+## Receipt scanning entry points
+
+Use the receipt icon button in the Pantry toolbar or the Scan tab. Receipt processing opens a confirmation bottom sheet where each extracted item has a checkbox and editable name/count. Only selected items are added to pantry.
