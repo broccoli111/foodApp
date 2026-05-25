@@ -8,6 +8,12 @@
 - Add full edit/delete flows for recipes, meal plans, stores, sale items, and shopping list rows.
 - Add storage upload helpers for `recipe-images` and `scan-uploads` buckets.
 
+## Recipe importing
+
+- Add optional server-side recipe URL extraction for sites that block client-side fetching.
+- Add share extension so users can send Safari/Instagram links directly to Kitchen Compass.
+- Add richer caption parsing for social recipes with hashtags and creator notes.
+
 ## Scanning
 
 - Replace mocked scan parsing with VisionKit / Vision OCR for receipt and recipe images.

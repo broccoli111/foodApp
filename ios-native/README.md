@@ -35,6 +35,12 @@ After sign-in/sign-up, `KitchenStore.refreshFromSupabase()` loads:
 - stores
 - sale items
 
+Recipe importing:
+
+- Enter a normal recipe URL to parse structured JSON-LD recipe data when available.
+- Enter an Instagram/Reels URL to import from the post description/caption metadata when available.
+- Review imported title, ingredients, and instructions before saving.
+
 Writes currently covered from the native UI:
 
 - add pantry item

@@ -16,6 +16,7 @@
 		000000000000000000000021 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000020 /* SupabaseClient.swift */; };
 		AA0000000000000000000002 /* SupabaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000001 /* SupabaseModels.swift */; };
 		000000000000000000000023 /* ScanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000022 /* ScanService.swift */; };
+		AA0000000000000000000004 /* RecipeImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000003 /* RecipeImportService.swift */; };
 		000000000000000000000025 /* KitchenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000024 /* KitchenStore.swift */; };
 		000000000000000000000027 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000026 /* MockData.swift */; };
 		000000000000000000000029 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000028 /* DashboardView.swift */; };
@@ -38,6 +39,7 @@
 		000000000000000000000020 /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/SupabaseClient.swift; sourceTree = "<group>"; };
 		AA0000000000000000000001 /* SupabaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/SupabaseModels.swift; sourceTree = "<group>"; };
 		000000000000000000000022 /* ScanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/ScanService.swift; sourceTree = "<group>"; };
+		AA0000000000000000000003 /* RecipeImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/RecipeImportService.swift; sourceTree = "<group>"; };
 		000000000000000000000024 /* KitchenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State/KitchenStore.swift; sourceTree = "<group>"; };
 		000000000000000000000026 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State/MockData.swift; sourceTree = "<group>"; };
 		000000000000000000000028 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/DashboardView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				000000000000000000000021 /* SupabaseClient.swift in Sources */,
 				AA0000000000000000000002 /* SupabaseModels.swift in Sources */,
 				000000000000000000000023 /* ScanService.swift in Sources */,
+				AA0000000000000000000004 /* RecipeImportService.swift in Sources */,
 				000000000000000000000025 /* KitchenStore.swift in Sources */,
 				000000000000000000000027 /* MockData.swift in Sources */,
 				000000000000000000000029 /* DashboardView.swift in Sources */,
@@ -86,6 +89,7 @@
 				000000000000000000000020 /* SupabaseClient.swift */,
 				AA0000000000000000000001 /* SupabaseModels.swift */,
 				000000000000000000000022 /* ScanService.swift */,
+				AA0000000000000000000003 /* RecipeImportService.swift */,
 				000000000000000000000024 /* KitchenStore.swift */,
 				000000000000000000000026 /* MockData.swift */,
 				000000000000000000000028 /* DashboardView.swift */,

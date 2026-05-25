@@ -67,6 +67,7 @@ Do not commit secret service-role keys. The iOS app should only use the public p
 - Supabase email signup/sign-in through REST auth endpoints
 - Persisted Supabase session in local app storage
 - Supabase PostgREST calls for household data
+- Recipe import from online URLs and Instagram/Reels descriptions
 - Household-scoped pantry, recipes, ingredients, meal plans, shopping list, stores, and sale items
 - Pantry add/consume/delete with Supabase persistence when signed in
 - Recipe add and meal planning with Supabase persistence when signed in
