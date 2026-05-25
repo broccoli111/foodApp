@@ -9,7 +9,14 @@
     "android": "expo start --android",
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:status": "supabase status",
+    "supabase:reset": "supabase db reset",
+    "supabase:push": "supabase db push",
+    "supabase:lint": "supabase db lint",
+    "supabase:types": "supabase gen types typescript --local --schema public > lib/supabase/database.ts"
   },
   "license": "MIT",
   "dependencies": {
@@ -38,6 +45,7 @@
     "@types/react": "^19.2.15",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~56.0.4",
+    "supabase": "^2.101.0",
     "typescript": "^6.0.3"
   },
   "private": true
