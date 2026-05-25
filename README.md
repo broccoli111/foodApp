@@ -75,3 +75,8 @@ The included `lib/supabase/database.ts` is a generated-style type file so app de
 - OCR and LLM parsing are mocked behind replaceable interfaces in `services/scanService.ts`.
 - Sale ingestion is mocked and modular. Instacart pricing is intentionally not used as authoritative pricing.
 - The app uses local persisted mock data for the MVP UI while the Supabase schema/auth layer is ready for real integration.
+
+
+## Native iOS SwiftUI app
+
+A native SwiftUI version is available in `ios-native/`. Open `ios-native/KitchenCompass.xcodeproj` in Xcode, choose your Apple development team under Signing & Capabilities, connect your iPhone, and press Run. Configure live Supabase auth by adding the FoodApp publishable key to `ios-native/KitchenCompass/Resources/SupabaseConfig.plist`.
