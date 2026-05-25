@@ -166,7 +166,12 @@ struct ReceiptScanSheet: View {
 
     private func processReceiptText(_ text: String) {
         reviewItems = ScanService.parseReceipt(text: text)
-        processingMessage = reviewItems.isEmpty ? "No receipt items found. Try pasting item lines manually." : "Found \(reviewItems.count) possible pantry item\(reviewItems.count == 1 ? "" : "s"). Review before adding."
+        if reviewItems.isEmpty {
+            processingMessage = "No receipt items found. Try pasting item lines manually."
+        } else {
+            let itemWord = reviewItems.count == 1 ? "item" : "items"
+            processingMessage = "Found \(reviewItems.count) possible pantry \(itemWord). Review before adding."
+        }
         showingReview = !reviewItems.isEmpty
     }
 }
@@ -178,6 +183,11 @@ struct ReceiptReviewSheet: View {
 
     private var selectedCount: Int {
         items.filter(\.approved).count
+    }
+
+    private var addButtonTitle: String {
+        let itemWord = selectedCount == 1 ? "item" : "items"
+        return "Add \(selectedCount) selected \(itemWord) to pantry"
     }
 
     var body: some View {
@@ -203,7 +213,7 @@ struct ReceiptReviewSheet: View {
                     Button {
                         onAddSelected(items.filter(\.approved))
                     } label: {
-                        Text("Add \(selectedCount) selected item\(selectedCount == 1 ? "" : "s") to pantry")
+                        Text(addButtonTitle)
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)
