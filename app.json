@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Kitchen Compass",
+    "slug": "kitchen-compass",
+    "scheme": "kitchencompass",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kitchencompass.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Kitchen Compass uses the camera to scan recipes and grocery receipts.",
+        "NSPhotoLibraryUsageDescription": "Kitchen Compass uses your photo library to import recipe and receipt images."
+      }
+    },
+    "android": {
+      "package": "com.kitchencompass.app"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-camera",
+      "expo-image-picker",
+      "react-native-reanimated"
+    ],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "00000000-0000-0000-0000-000000000000"
+      }
+    }
+  }
+}
