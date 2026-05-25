@@ -95,7 +95,7 @@ final class RecipeImportService {
         // Instagram metadata commonly looks like: "123 likes, 4 comments - user on May 1: \"caption\"".
         if let colon = description.range(of: ": ") {
             var caption = String(description[colon.upperBound...])
-            caption = caption.trimmingCharacters(in: CharacterSet(charactersIn: " \""""))
+            caption = caption.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines.union(CharacterSet(charactersIn: "\"")))
             return caption
         }
         return description
